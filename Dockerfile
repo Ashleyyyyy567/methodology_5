@@ -26,7 +26,7 @@ USER jovyan
 
 # RUN conda install -y scikit-learn
 
-RUN pip install --no-cache-dir networkx scipy
+RUN pip install --no-cache-dir json pandas urllib.parse urlextract
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
