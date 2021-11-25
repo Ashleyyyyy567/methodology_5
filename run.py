@@ -14,7 +14,7 @@ def url_checking():
     none_count = 0
     multiple_url_cout = 0
 
-    df = pd.read_csv("/test/testdata/misinformation_source.csv")
+    df = pd.read_csv("test/testdata/misinformation_source.csv")
     df = df[df['Domain'].notna()]
     misinfo = list(df.Domain)
     # fact checker website comes from https://library.csi.cuny.edu/c.php?g=619342&p=4310783
@@ -22,7 +22,7 @@ def url_checking():
                    'flackcheck.org', 'mediabiasfactcheck.com', 'npr.org']
 
 
-    with open('/test/testdata/tweet_output.jsonl', 'r') as f:
+    with open('test/testdata/tweet_output.jsonl', 'r') as f:
         for line in f:
             tweet = json.loads(line)
             total_count += 1
@@ -85,7 +85,7 @@ def top100():
     min_retweet = 1000000
     min_id = 0
 
-    with open('/test/testdata/tweet_output.jsonl', 'r') as f:
+    with open('test/testdata/tweet_output.jsonl', 'r') as f:
         count = 0
         for line in f:
             tweet = json.loads(line)
@@ -116,7 +116,7 @@ def top100_url_checking():
     misinfo_count = 0
     fact_count = 0
 
-    df = pd.read_csv("/test/testdata/misinformation_source.csv")
+    df = pd.read_csv("test/testdata/misinformation_source.csv")
     df = df[df['Domain'].notna()]
     misinfo = list(df.Domain)
     # fact checker website comes from https://library.csi.cuny.edu/c.php?g=619342&p=4310783
